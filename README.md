@@ -1,38 +1,60 @@
-# Genetic Algorithm Library
+# 🧬 Genetic Algorithm Library
 
 [![PyPI version](https://img.shields.io/badge/pypi-v0.2.0-blue.svg)](https://pypi.org/project/genetic-algorithm-library/)
 [![Python 3.6+](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Documentation](https://img.shields.io/badge/docs-wiki-green.svg)](https://github.com/Zaxazgames1/genetic-algorithm-library/wiki)
+[![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)]()
 
-## Overview
+<div align="center">
+  <img src="https://raw.githubusercontent.com/Zaxazgames1/genetic-algorithm-library/main/docs/images/logo.png" alt="Genetic Algorithm Library Logo" width="300"/>
+  <br>
+  <em>Optimización evolutiva avanzada para problemas complejos</em>
+</div>
 
-Genetic Algorithm Library es una librería robusta y completa para implementar algoritmos genéticos y evolutivos en problemas de optimización. Proporciona un framework flexible y potente para resolver problemas complejos mediante técnicas de computación evolutiva avanzadas.
+## 📋 Descripción General
 
-## Características principales
+**Genetic Algorithm Library** es un potente framework de computación evolutiva diseñado para resolver problemas de optimización complejos. Esta librería implementa algoritmos genéticos avanzados con capacidades adaptativas, proporcionando herramientas flexibles y eficientes para investigadores y desarrolladores.
 
-- **Múltiples codificaciones genéticas**: Soporte para representaciones reales, binarias, enteras y de permutación
-- **Amplia variedad de operadores genéticos**:
+La librería destaca por su amplia variedad de operadores genéticos, soporte para optimización multi-objetivo, y mecanismos de adaptación dinámica que mejoran la convergencia y diversidad poblacional.
+
+## ✨ Características Principales
+
+- **🔄 Múltiples codificaciones genéticas**: 
+  - Representaciones reales, binarias, enteras y de permutación
+  - Adaptación automática al tipo de problema
+
+- **🔧 Operadores genéticos avanzados**:
   - **Selección**: Torneo, Ruleta, Ranking, SUS (Muestreo Universal Estocástico), Boltzmann
   - **Cruce**: Uniforme, Un punto, Dos puntos, Blend, SBX, PMX (para permutaciones)
   - **Mutación**: Gaussiana, Uniforme, Reset, Adaptativa, Swap e Inversión (para permutaciones)
-- **Adaptabilidad dinámica**: Ajuste automático de parámetros y tasas de mutación durante la ejecución
-- **Algoritmos avanzados**:
-  - Algoritmo genético estándar
-  - Optimización multi-objetivo (basada en NSGA-II)
-  - Modelo de islas con migración
-- **Herramientas de análisis y visualización**: Gráficos detallados de evolución, frentes de Pareto y diversidad poblacional
-- **Alta personalización**: Fácil integración de funciones objetivo y operadores personalizados
-- **Documentación detallada**: Ejemplos, guías y documentación completa de la API
 
-## Instalación
+- **📊 Algoritmos especializados**:
+  - Algoritmo genético estándar con adaptación dinámica
+  - Optimización multi-objetivo (basada en NSGA-II)
+  - Modelo de islas con migración controlada
+  - Capacidades paralelas para problemas computacionalmente intensivos
+
+- **📈 Herramientas analíticas integradas**:
+  - Visualización avanzada de evolución y convergencia
+  - Análisis de frentes de Pareto para optimización multi-objetivo
+  - Monitoreo de diversidad poblacional
+  - Seguimiento de rendimiento y eficiencia
+
+- **⚙️ Alta personalización**:
+  - Integración sencilla de funciones objetivo personalizadas
+  - Operadores genéticos personalizables
+  - Parámetros adaptables durante la ejecución
+
+## 🚀 Instalación
 
 ```bash
 pip install genetic-algorithm-library
 ```
 
-## Guía rápida
+## 🏁 Guía Rápida
 
-### Optimización simple
+### Optimización Simple
 
 ```python
 from genetic_algorithm import run_genetic_algorithm, plot_evolution
@@ -62,7 +84,7 @@ print(f"Mejor fitness: {result['best_fitness']}")
 plot_evolution(result['history'])
 ```
 
-### Optimización multi-objetivo
+### Optimización Multi-objetivo
 
 ```python
 from genetic_algorithm import run_multi_objective_ga, plot_pareto_front
@@ -90,7 +112,7 @@ plot_pareto_front(
 )
 ```
 
-### Modelo de islas
+### Modelo de Islas
 
 ```python
 from genetic_algorithm import run_island_model_ga
@@ -108,9 +130,9 @@ result = run_island_model_ga(
 )
 ```
 
-## Uso avanzado
+## 🛠️ Uso Avanzado
 
-La biblioteca permite un control avanzado de todos los aspectos del algoritmo genético:
+La biblioteca permite un control completo de todos los aspectos del algoritmo genético:
 
 ```python
 import numpy as np
@@ -129,14 +151,14 @@ population = create_population(
     gene_length=5, 
     min_val=-5, 
     max_val=5,
-    encoding="real"  # Otras opciones: "binary", "integer", "permutation"
+    encoding="real"  # Otras: "binary", "integer", "permutation"
 )
 
 # Función objetivo personalizada
 def my_objective(x):
     return np.sin(x[0]) + np.cos(x[1]) + x[2]**2 - x[3] + x[4]
 
-# Iteración manual
+# Iteración manual del algoritmo
 for generation in range(100):
     # Evaluar fitness
     fitness_values = np.array([fitness_function(ind, my_objective) for ind in population])
@@ -172,29 +194,64 @@ for generation in range(100):
     population = np.vstack([population[best_idx:best_idx+1], parents[:-1], offspring])
 ```
 
-## Ejemplos incluidos
+## 📊 Visualización de Resultados
 
-La biblioteca incluye ejemplos completos para diversos problemas:
+La librería incluye herramientas para visualizar y analizar los resultados:
 
-- **Optimización de funciones continuas**: minimización de funciones matemáticas
-- **Problema del Viajante (TSP)**: optimización de rutas mediante permutaciones
-- **Optimización multi-objetivo**: problemas con objetivos en conflicto
-- **Modelo de islas**: optimización con múltiples subpoblaciones en paralelo
+<div align="center">
+  <table>
+    <tr>
+      <td align="center"><img src="https://raw.githubusercontent.com/Zaxazgames1/genetic-algorithm-library/main/docs/images/evolution_plot.png" alt="Evolution Plot" width="400"/></td>
+      <td align="center"><img src="https://raw.githubusercontent.com/Zaxazgames1/genetic-algorithm-library/main/docs/images/pareto_front.png" alt="Pareto Front" width="400"/></td>
+    </tr>
+    <tr>
+      <td align="center"><em>Evolución del Fitness</em></td>
+      <td align="center"><em>Frente de Pareto Multi-objetivo</em></td>
+    </tr>
+  </table>
+</div>
 
-## Documentación
+## 🧪 Problemas Implementados
+
+La librería incluye implementaciones para diversos problemas:
+
+- **Optimización de funciones continuas**:
+  - Sphere, Rastrigin, Schwefel, Ackley, Rosenbrock, Griewank y más
+  - Fácilmente extensible a funciones personalizadas
+
+- **Problemas de permutación**:
+  - Problema del Viajante (TSP)
+  - Ordenamiento y secuenciación
+
+- **Problemas discretos**:
+  - Mochila (Knapsack)
+  - Asignación de tareas
+  - Max-Cut
+
+- **Optimización multi-objetivo**:
+  - Problemas con objetivos en conflicto
+  - Visualización de frentes de Pareto
+
+## 📖 Documentación
 
 Para la documentación completa, visite nuestra [Wiki en GitHub](https://github.com/Zaxazgames1/genetic-algorithm-library/wiki).
 
-## Colaboradores
+También puede consultar los ejemplos incluidos:
 
-- Julian Lara
-- Johan Rojas
+- [`examples/basic_optimization.py`](https://github.com/Zaxazgames1/genetic-algorithm-library/blob/main/examples/basic_optimization.py): Optimización básica
+- [`examples/tsp_example.py`](https://github.com/Zaxazgames1/genetic-algorithm-library/blob/main/examples/tsp_example.py): Problema del Viajante
+- [`examples/multi_objective.py`](https://github.com/Zaxazgames1/genetic-algorithm-library/blob/main/examples/multi_objective.py): Optimización multi-objetivo
 
-## Licencia
+## 👥 Colaboradores
 
-Este proyecto está licenciado bajo la Licencia MIT - ver el archivo LICENSE para más detalles.
+- **Johan Rojas** - Desarrollo principal y algoritmos avanzados
+- **Julian Lara** - Diseño de API y optimización de rendimiento
 
-## Cómo citar
+## 📄 Licencia
+
+Este proyecto está licenciado bajo la Licencia MIT - ver el archivo [LICENSE](LICENSE) para más detalles.
+
+## 📚 Cómo Citar
 
 Si utiliza esta biblioteca en su investigación, por favor cite:
 
@@ -207,3 +264,16 @@ Si utiliza esta biblioteca en su investigación, por favor cite:
   year = {2025},
 }
 ```
+
+## 🔗 Enlaces Útiles
+
+- [Repositorio GitHub](https://github.com/Zaxazgames1/genetic-algorithm-library)
+- [Registro de Problemas](https://github.com/Zaxazgames1/genetic-algorithm-library/issues)
+- [Página PyPI](https://pypi.org/project/genetic-algorithm-library/)
+- [Documentación Wiki](https://github.com/Zaxazgames1/genetic-algorithm-library/wiki)
+
+---
+
+<div align="center">
+  <p>Desarrollado con ❤️ para la comunidad de investigación en computación evolutiva</p>
+</div>
