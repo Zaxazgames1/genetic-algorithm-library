@@ -53,3 +53,29 @@ coverage.xml
 # Archivos temporales
 .tmp/
 .temp/
+
+# Archivos específicos del proyecto
+examples/*.png
+examples/*.jpg
+examples/*.svg
+examples/*.pdf
+
+# Archivos de resultados
+results/
+output/
+*.npy
+*.npz
+
+# Caches específicos de Python
+__pycache__/
+.pyc
+
+# Entornos virtuales adicionales
+.virtualenv/
+venv*/
+virtualenv*/
+
+# Archivos de distribución
+dist/
+build/
+*.egg-info/
